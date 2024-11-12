@@ -1,0 +1,36 @@
+
+
+#function to calculate the distance between nodes
+
+#city is designed on a 10 x 10 grid
+
+#camera uses that to defermine the current state
+
+state = [['S','x','x','x','x','x','x','x','x','x'],
+         ['x','x','x','x','x','x','x','x','x','x'],
+         ['x','x','F','x','x','x','x','x','x','x'],
+         ['x','x','x','x','x','x','F','x','x','x'],
+         ['x','x','x','x','x','x','x','x','x','x'],
+         ['x','x','F','x','x','x','x','x','x','x'],
+         ['x','x','x','x','x','x','x','x','x','x'],
+         ['x','x','x','x','x','x','x','F','x','x'],
+         ['x','x','x','x','x','x','x','x','x','x'],
+         ['x','x','x','x','x','x','x','F','x','x']]
+
+for i in range(10):
+    for j in range(10):
+        if state[i][j] == 'F':
+            print(f'Fire {i},{j}')
+
+    
+startx = 0
+starty = 0
+
+starting_position = (startx, starty)
+
+#the 'car' is allowed to move either +-1 index or +-sub index as it searches the shortest path
+
+
+#recursive function to determine optimal path
+
+if 
