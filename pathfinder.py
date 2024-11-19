@@ -16,7 +16,7 @@ def main():
         startx = input('X: ')
         try:
             startx = int(startx)
-            if startx <= board_size and startx >= 0:
+            if startx <= board_size and startx >= 1:
                 car.x = startx
                 break
         except ValueError:
