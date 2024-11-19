@@ -5,6 +5,8 @@ class Car():
         self.x = x
         self.y = y
 
+    def __str__(self):
+        return(f'Car Position:({self.x},{self.y})')
 
     def fire_check(state, x, y):
         #determine if on a fire

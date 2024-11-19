@@ -1,17 +1,6 @@
-
 from car import Car
 
-#function to calculate the distance between nodes
-#city is designed on a 10 x 10 grid
-#camera uses that to defermine the current state
-#the 'car' is allowed to move either +-1 index or +-sub index as it searches the shortest path
-#create a node for the starting state
-
-
-
 board_size = 10
-
-
 
 def main():
 
@@ -19,9 +8,33 @@ def main():
 
     car = Car(state=state)
 
+    for row in car.state:
+        print(row)
+
+    #recieve the starting x location of the car
+    while True:
+        startx = input('X: ')
+        try:
+            startx = int(startx)
+            if startx <= board_size and startx >= 0:
+                car.x = startx
+                break
+        except ValueError:
+            print("Must enver valid integer")
+    
+    #recieve the starting x location of the car
+    while True:
+        starty = input('Y: ')
+        try:
+            starty = int(starty)
+            if starty <= board_size and starty >= 0:
+                car.y=starty
+                break
+        except ValueError:
+            print("Must enver valid integer")
+
     print(car)
 
-
-
+    #recieve the location of a fire
 
 main()
