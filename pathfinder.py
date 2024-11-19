@@ -19,7 +19,7 @@ def main():
 
     car = Car(state=state)
 
-    print(car.)
+    print(car)
 
 
 
