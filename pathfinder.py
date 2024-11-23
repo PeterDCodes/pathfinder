@@ -41,13 +41,16 @@ def main():
 
 
     #update start position of the car on the board
-    board[car.x][car.y] = 'C'
+    board[car.y][car.x] = 'C'
 
     print_board(board)
 
 
     #add fire to board
     start_fire(board)
+
+
+    #fine the moves possible and select the best path to get to the fire
     
 
 

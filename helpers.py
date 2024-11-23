@@ -1,8 +1,18 @@
 
 #function to print the game board for user to see
 def print_board(board):
+        print('---Game Board---')
+        print('X')
+        i = 0
         for row in board:
-            print(row)
+            print(f'{i}:{row}')
+            i += 1
+        #add each number in y axis to array
+        #print the array
+        print('Y: ', end='')
+        for j in range(len(board)):
+            print(f' {j}   ', end = '')
+        print('')
 
 
 def start_fire(board):
@@ -35,8 +45,8 @@ def start_fire(board):
             except ValueError:
                 print('Must Enter Integer')
 
-        if board[fire_x][fire_y] == 'x':
-            board[fire_x][fire_y] = 'F'
+        if board[fire_y][fire_x] == 'x':
+            board[fire_y][fire_x] = 'F'
             print_board(board)
             break
         else:
