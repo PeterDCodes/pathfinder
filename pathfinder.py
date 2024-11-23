@@ -1,17 +1,19 @@
 from car import Car
+from helpers import print_board, start_fire
 
 board_size = 10
 
 def main():
 
-    state = [['x'for _ in range(board_size)] for _ in range(board_size)]
+    board = [['x'for _ in range(board_size)] for _ in range(board_size)]
 
-    car = Car(state=state)
+    car = Car()
 
-    for row in car.state:
-        print(row)
+    print("Pathfinder Game")
+    print(car)
 
     #recieve the starting x location of the car
+    print('Set Car Starting Position')
     while True:
         startx = input('X: ')
         try:
@@ -19,10 +21,12 @@ def main():
             if startx <= board_size and startx >= 1:
                 car.x = startx
                 break
+            else:
+                print('Car position located outside of board')
         except ValueError:
             print("Must enver valid integer")
     
-    #recieve the starting x location of the car
+    #recieve the starting y location of the car
     while True:
         starty = input('Y: ')
         try:
@@ -30,11 +34,21 @@ def main():
             if starty <= board_size and starty >= 0:
                 car.y=starty
                 break
+            else:
+                print('Car position located outside of board')
         except ValueError:
             print("Must enver valid integer")
 
-    print(car)
 
-    #recieve the location of a fire
+    #update start position of the car on the board
+    board[car.x][car.y] = 'C'
+
+    print_board(board)
+
+
+    #add fire to board
+    start_fire(board)
+    
+
 
 main()

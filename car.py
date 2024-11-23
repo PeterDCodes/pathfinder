@@ -1,21 +1,15 @@
 class Car():
 
-    def __init__(self, state=None, x=None, y=None):
-        self.state = state
+    def __init__(self, x=None, y=None):
         self.x = x
         self.y = y
 
     def __str__(self):
         return(f'Car Position:({self.x},{self.y})')
 
-    def fire_check(state, x, y):
-        #determine if on a fire
-        tile = state[x][y]
-        if tile == 'F':
-            return True
-
-    def find_moves(state, x, y):
+    def find_moves(board, x, y):
         #determine the current moves
         moves = []
-        tile = state[x][y]
+        tile = board[x][y]
         print(tile)
+
